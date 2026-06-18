@@ -6,23 +6,22 @@
     <title>FeudalWorld — Сервер Майнкрафт</title>
     <style>
         * {margin: 0;padding: 0;box-sizing: border-box;font-family: 'Georgia', serif;}
-        body {background: #121212;color: #e0d6b3;line-height: 1.6;background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url('ibb.co');background-size: cover;background-attachment: fixed;background-position: center;}
-        header {text-align: center;padding: 60px 20px;border-bottom: 3px double #8c7647;background: rgba(20, 20, 20, 0.75);}
+        body {background: #1a1a1a;color: #e0d6b3;line-height: 1.6;background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6));background-size: cover;background-attachment: fixed;background-position: center;}
+        header {text-align: center;padding: 60px 20px;border-bottom: 3px double #8c7647;background: rgba(20, 20, 20, 0.85);}
         .logo {font-size: 3rem;text-transform: uppercase;letter-spacing: 4px;color: #ffcc00;text-shadow: 3px 3px 0px #000, 0 0 20px rgba(255, 204, 0, 0.4);margin-bottom: 10px;}
         .subtitle {font-style: italic;color: #b3a27f;font-size: 1.2rem;}
         .container {max-width: 1000px;margin: 40px auto;padding: 0 20px;}
         
-        /* Измененный блок IP адреса */
-        .ip-box {background: rgba(30, 25, 20, 0.95);border: 2px solid #8c7647;border-radius: 8px;padding: 30px;text-align: center;margin-bottom: 40px;box-shadow: 0 10px 30px rgba(0,0,0,0.8);}
+        .ip-box {background: rgba(25, 22, 18, 0.95);border: 2px solid #8c7647;border-radius: 8px;padding: 30px;text-align: center;margin-bottom: 40px;box-shadow: 0 10px 30px rgba(0,0,0,0.8);}
         .ip-text {font-size: 1.5rem;margin-bottom: 15px;color: #fff;}
-        .ip-link {display: inline-block;background: #2a2218;padding: 10px 20px;border: 1px dashed #ffcc00;font-family: monospace;font-size: 1.8rem;color: #ffcc00;text-decoration: none;transition: 0.3s;font-weight: bold;}
+        .ip-link {display: inline-block;background: #1f1912;padding: 10px 20px;border: 1px dashed #ffcc00;font-family: monospace;font-size: 1.8rem;color: #ffcc00;text-decoration: none;transition: 0.3s;font-weight: bold;}
         .ip-link:hover {background: #ffcc00;color: #000;}
         
-        .newbie-help {background: rgba(140, 118, 71, 0.15);border: 2px dashed #8c7647;padding: 25px;border-radius: 8px;margin-bottom: 40px;text-align: center;}
+        .newbie-help {background: rgba(140, 118, 71, 0.1);border: 2px dashed #8c7647;padding: 25px;border-radius: 8px;margin-bottom: 40px;text-align: center;}
         .newbie-help h3 {color: #ffcc00;font-size: 1.5rem;margin-bottom: 10px;}
         .newbie-help p {font-size: 1.05rem;}
         .features {display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 30px;margin-bottom: 40px;}
-        .feature-card {background: rgba(20, 20, 20, 0.9);border: 1px solid #4a3f29;padding: 25px;border-radius: 6px;text-align: center;transition: transform 0.3s, border-color 0.3s;}
+        .feature-card {background: rgba(25, 25, 25, 0.9);border: 1px solid #4a3f29;padding: 25px;border-radius: 6px;text-align: center;transition: transform 0.3s, border-color 0.3s;}
         .feature-card:hover {transform: translateY(-5px);border-color: #ffcc00;}
         .feature-icon {font-size: 2.5rem;margin-bottom: 15px;display: inline-block;}
         .feature-card h3 {color: #ffcc00;margin-bottom: 12px;font-size: 1.4rem;}
@@ -32,14 +31,13 @@
         .section-title {text-align: center;color: #ffcc00;margin: 50px 0 20px;font-size: 2rem;text-transform: uppercase;letter-spacing: 2px;}
         .section-subtitle {text-align: center;color: #b3a27f;margin: -15px 0 30px;font-style: italic;font-size: 1.1rem;padding: 0 10px;}
         
-        /* Кнопка магазина теперь ведет в ТГ, так как сайт в разработке */
         .cta-btn {display: block;width: 100%;max-width: 300px;margin: 20px auto 0;text-align: center;background: linear-gradient(135deg, #a62b2b, #661a1a);color: #fff;padding: 15px 30px;font-size: 1.3rem;text-decoration: none;text-transform: uppercase;font-weight: bold;border: 2px solid #ffcc00;border-radius: 5px;box-shadow: 0 5px 15px rgba(0,0,0,0.5);transition: 0.3s;}
         .cta-btn:hover {transform: scale(1.05);background: linear-gradient(135deg, #cc3333, #8a2222);box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);}
         
-        .links-box {text-align: center;background: rgba(20, 20, 20, 0.8);border: 1px solid #4a3f29;padding: 30px;border-radius: 6px;}
+        .links-box {text-align: center;background: rgba(25, 25, 25, 0.85);border: 1px solid #4a3f29;padding: 30px;border-radius: 6px;}
         .link-item {display: inline-block;margin: 15px auto 0;background: #229ED9;color: #fff;font-size: 1.2rem;text-decoration: none;padding: 12px 25px;border-radius: 5px;font-weight: bold;transition: 0.3s;box-shadow: 0 4px 10px rgba(0,0,0,0.4);}
         .link-item:hover {background: #1e87bb;transform: translateY(-2px);}
-        footer {text-align: center;padding: 30px;margin-top: 60px;background: #0a0a0a;border-top: 1px solid #222;font-size: 0.9rem;color: #666;}
+        footer {text-align: center;padding: 30px;margin-top: 60px;background: #101010;border-top: 1px solid #222;font-size: 0.9rem;color: #666;}
         @media (max-width: 600px) {
             .logo { font-size: 2rem; }
             .ip-link { font-size: 1.3rem; }
@@ -55,11 +53,10 @@
 
     <div class="container">
         
-        <!-- Блок IP адреса переделан в надежную ссылку -->
         <div class="ip-box">
             <div class="ip-text">Присоединяйся к битве прямо сейчас!</div>
             <a href="https://t.me" class="ip-link" target="_blank">FeudalWorld.aternos.me:56816</a>
-            <div style="font-size: 0.85rem; color: #b3a27f; margin-top: 10px;">(Нажми на адрес, чтобы перейти в группу и начать игру)</div>
+            <div style="font-size: 0.85rem; color: #b3a27f; margin-top: 10px;">(Нажми на адрес, чтобы перейти в группу приёма и начать игру)</div>
         </div>
 
         <div class="newbie-help">
@@ -125,13 +122,13 @@
             </div>
         </div>
 
-        <!-- Кнопка теперь сразу открывает контакты, так как магазин в разработке -->
-        <a href="https://t.me" class="cta-btn" target="_blank">Магазин (В разработке)</a>
+        <!-- Кнопка магазина теперь ведет в группу Доната -->
+        <a href="https://t.me/+GtLFAodfxQ4wYzZi" class="cta-btn" target="_blank">Купить Донат</a>
 
         <h2 class="section-title">⚔️ Как попасть на сервер? ⚔️</h2>
         <div class="links-box">
             <p>Заходи в наш Telegram-канал для приёма на сервер, чтобы получить доступ к игре!</p>
-            <a href="https://t.me" class="link-item" target="_blank">✈️ Наша группа в Telegram</a>
+            <a href="https://t.me" class="link-item" target="_blank">✈️ Наша группа приёма в Telegram</a>
         </div>
 
     </div>
