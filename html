@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medieval Craft — Сервер средневековых сражений Minecraft</title>
+    <style>
+        /* Основные стили и сброс */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            background: #121212;
+            color: #e0d6b3;
+            line-height: 1.6;
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://unsplash.com');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* Шапка сайта */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 3px double #8c7647;
+            background: rgba(20, 20, 20, 0.8);
+        }
+
+        .logo {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #ffcc00;
+            text-shadow: 3px 3px 0px #000, 0 0 20px rgba(255, 204, 0, 0.4);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #b3a27f;
+            font-size: 1.2rem;
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Карточка IP адреса */
+        .ip-box {
+            background: rgba(30, 25, 20, 0.9);
+            border: 2px solid #8c7647;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        .ip-text {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .ip-address {
+            display: inline-block;
+            background: #2a2218;
+            padding: 10px 20px;
+            border: 1px dashed #ffcc00;
+            font-family: monospace;
+            font-size: 1.8rem;
+            color: #ffcc00;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .ip-address:hover {
+            background: #ffcc00;
+            color: #000;
+        }
+
+        /* Сетка особенностей */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: rgba(25, 25, 25, 0.85);
+            border: 1px solid #4a3f29;
+            padding: 25px;
+            border-radius: 6px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffcc00;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            color: #ffcc00;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        /* Кнопка Доната / Сайта */
+        .cta-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            background: linear-gradient(135deg, #a62b2b, #661a1a);
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: 2px solid #ffcc00;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #cc3333, #8a2222);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+        }
+
+        /* Подвал */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Адаптивность под мобилки */
+        @media (max-width: 600px) {
+            .logo { font-size: 2rem; }
+            .ip-address { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">⚔️ Medieval Craft ⚔️</div>
+        <div class="subtitle">Эпоха великих осад, рыцарских турниров и клановых войн</div>
+    </header>
+
+    <div class="container">
+
+        <!-- Блок подключения -->
+        <div class="ip-box">
+            <div class="ip-text">Присоединяйся к битве прямо сейчас!</div>
+            <div class="ip-address" id="ipSelect" onclick="copyIp()">mc.medievalcraft.ru</div>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: #8c7647;">(Нажми, чтобы скопировать IP)</p>
+        </div>
+
+        <!-- Особенности сервера -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🏰</div>
+                <h3>Осады Замков</h3>
+                <p>Объединяйтесь в кланы, стройте катапульты и захватывайте вражеские крепости в реальном времени.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Реалистичное PvP</h3>
+                <p>Уникальная механика выносливости, веса доспехов и критических ударов боевым оружием.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🪙</div>
+                <h3>Живая Экономика</h3>
+                <p>Торгуйте ресурсами, нанимайте наемников и развивайте собственное феодальное поселение.</p>
+            </div>
+        </div>
+
+        <!-- Кнопка в магазин -->
+        <a href="#shop" class="cta-btn">Купить привилегию</a>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Medieval Craft. Все права защищены. Сервер не связан с Mojang Studios.</p>
+    </footer>
+
+    <script>
+        // Функция копирования IP кликом
+        function copyIp() {
+            const ipText = document.getElementById('ipSelect').innerText;
+            navigator.clipboard.writeText(ipText).then(() => {
+                alert('IP адрес скопирован в буфер обмена! Ждем тебя на сервере.');
+            }).catch(err => {
+                console.error('Ошибка копирования: ', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
