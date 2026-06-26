@@ -19,7 +19,6 @@
             font-family: Montserrat, sans-serif;
             background: #0d0d0d;
             color: white;
-            /* ЖЕСТКО ЗАФИКСИРОВАННЫЙ СРЕДНЕВЕКОВЫЙ ФОН */
             background-image: 
                 linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.82)), 
                 url("https://unsplash.com");
@@ -28,7 +27,7 @@
             background-attachment: fixed;
         }
 
-        /* НАДЕЖНАЯ АНИМАЦИЯ НА ЧИСТОМ CSS ДЛЯ ШАПКИ */
+        /* НАДЕЖНАЯ АНИМАЦИЯ НА ЧИСТОМ CSS ДЛЯ ВСЕХ БЛОКОВ */
         header {
             height: 100vh;
             display: flex;
@@ -39,7 +38,6 @@
             animation: fadeInContent 1.2s ease-out forwards;
         }
 
-        /* АНИМАЦИЯ ПОЯВЛЕНИЯ ТЕКСТА ДЛЯ ВСЕХ СЕКЦИЙ ПРИ ЗАГРУЗКЕ */
         section {
             padding: 90px 10%;
             animation: fadeInContent 1.5s ease-out forwards;
@@ -290,6 +288,7 @@
                 <h2>Telegram</h2>
                 <p style="color: #bbb; margin-bottom: 10px;">Наш официальный канал</p>
                 <div class="tg-container">
+                    <!-- ОФИЦИАЛЬНЫЙ СПОСОБ ПЕРЕНАПРАВЛЕНИЯ НА КАНАЛ -->
                     <a href="https://telegram.org" target="_blank" class="tg-btn">Перейти в канал</a>
                 </div>
             </div>
