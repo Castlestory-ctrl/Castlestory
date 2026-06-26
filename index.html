@@ -32,7 +32,6 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
-            /* Плавное проявление шапки при открытии сайта */
             animation: fadeInHeader 1s ease-out forwards;
         }
 
@@ -127,24 +126,29 @@
             box-shadow: 0 0 30px rgba(255, 213, 79, 0.3);
         }
 
+        /* Исправленные и улучшенные стили для кнопки Telegram */
+        .tg-container {
+            margin-top: 15px;
+        }
+
         .tg-btn {
             display: inline-block;
-            background: #c99700;
-            color: black;
+            background: #c99700 !important;
+            color: black !important;
             padding: 12px 24px;
             border-radius: 8px;
-            text-decoration: none;
+            text-decoration: none !important;
             font-weight: bold;
             transition: .3s;
-            margin-top: 10px;
         }
 
         .tg-btn:hover {
-            background: #ffd54f;
+            background: #ffd54f !important;
             transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 213, 79, 0.4);
         }
 
-        /* Всплывающее всплывающее окно при копировании */
+        /* Уведомление о копировании */
         .toast {
             position: fixed;
             bottom: -100px;
@@ -273,8 +277,10 @@
             </div>
             <div class="card">
                 <h2>Telegram</h2>
-                <p style="color: #bbb; margin-bottom: 5px;">Наш официальный канал</p>
-                <a href="https://t.me" target="_blank" class="tg-btn">Перейти в канал</a>
+                <p style="color: #bbb; margin-bottom: 10px;">Наш официальный канал</p>
+                <div class="tg-container">
+                    <a href="https://t.me" target="_blank" class="tg-btn">Перейти в канал</a>
+                </div>
             </div>
         </div>
     </section>
