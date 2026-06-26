@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FeudalWorld — Средневековый Minecraft server</title>
+    <title>FeudalWorld — Средневековый Minecraft сервер</title>
 
     <link href="https://googleapis.com" rel="stylesheet">
 
@@ -19,7 +19,7 @@
             font-family: Montserrat, sans-serif;
             background: #0d0d0d;
             color: white;
-            /* ВОЗВРАЩЕН И ЗАКРЕПЛЕН ОРИГИНАЛЬНЫЙ ФОН */
+            /* ЖЕСТКО ЗАФИКСИРОВАННЫЙ СРЕДНЕВЕКОВЫЙ ФОН */
             background-image: 
                 linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.82)), 
                 url("https://unsplash.com");
@@ -28,6 +28,7 @@
             background-attachment: fixed;
         }
 
+        /* НАДЕЖНАЯ АНИМАЦИЯ НА ЧИСТОМ CSS ДЛЯ ШАПКИ */
         header {
             height: 100vh;
             display: flex;
@@ -35,12 +36,24 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
-            animation: fadeInHeader 1s ease-out forwards;
+            animation: fadeInContent 1.2s ease-out forwards;
         }
 
-        @keyframes fadeInHeader {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* АНИМАЦИЯ ПОЯВЛЕНИЯ ТЕКСТА ДЛЯ ВСЕХ СЕКЦИЙ ПРИ ЗАГРУЗКЕ */
+        section {
+            padding: 90px 10%;
+            animation: fadeInContent 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeInContent {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         header h1 {
@@ -72,10 +85,6 @@
             transform: scale(1.05);
             background: #ffd54f;
             box-shadow: 0 0 20px rgba(255, 213, 79, 0.4);
-        }
-
-        section {
-            padding: 90px 10%;
         }
 
         .title {
@@ -150,6 +159,7 @@
             box-shadow: 0 0 15px rgba(255, 213, 79, 0.4);
         }
 
+        /* Уведомление о копировании */
         .toast {
             position: fixed;
             bottom: -100px;
@@ -280,8 +290,7 @@
                 <h2>Telegram</h2>
                 <p style="color: #bbb; margin-bottom: 10px;">Наш официальный канал</p>
                 <div class="tg-container">
-                    <!-- ИСПРАВЛЕННАЯ ССЫЛКА ЧЕРЕЗ БРАУЗЕРНЫЙ ШЛЮЗ -->
-                    <a href="https://tlgg.ru" target="_blank" class="tg-btn">Перейти в канал</a>
+                    <a href="https://telegram.org" target="_blank" class="tg-btn">Перейти в канал</a>
                 </div>
             </div>
         </div>
