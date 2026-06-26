@@ -142,6 +142,23 @@
             box-shadow: 0 0 30px rgba(255, 213, 79, 0.3);
         }
 
+        .tg-btn {
+            display: inline-block;
+            background: #c99700;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .tg-btn:hover {
+            background: #ffd54f;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 213, 79, 0.3);
+        }
+
         /* Всплывающее уведомление о копировании */
         .toast {
             position: fixed;
@@ -278,7 +295,8 @@
             </div>
             <div class="card">
                 <h2>Telegram</h2>
-                <p><a href="https://t.me" target="_blank" style="color:#ffd54f; text-decoration:none; font-weight:bold;">@FeudalWorld</a></p>
+                <p style="margin-bottom: 15px; color: #bbb;">Наш официальный канал</p>
+                <p><a href="https://t.me" target="_blank" class="tg-btn">Перейти в канал</a></p>
             </div>
         </div>
     </section>
@@ -290,11 +308,11 @@
         </p>
     </footer>
 
-    <!-- Элемент для красивого уведомления -->
+    <!-- Уведомление о копировании -->
     <div id="toast" class="toast">📋 IP сервера успешно скопирован!</div>
 
     <script>
-        // Копирование IP с красивым уведомлением
+        // Копирование IP
         function copyIP() {
             navigator.clipboard.writeText("feudalworld.join-here.xyz");
             
@@ -306,7 +324,7 @@
             }, 2500);
         }
 
-        // Логика отслеживания прокрутки для анимации блоков
+        // Анимация блоков при скролле
         const animatedBlocks = document.querySelectorAll('.animate-fade');
 
         const observerOptions = {
@@ -319,14 +337,4 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Чтобы анимация срабатывала один раз
-                }
-            });
-        }, observerOptions);
-
-        animatedBlocks.forEach(block => {
-            observer.observe(block);
-        });
-    </script>
-</body>
-</html>
+                    observer.unobserve(entry.target);}});}, observerOptions);animatedBlocks.forEach(block => {observer.observe(block);});
