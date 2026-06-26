@@ -1,481 +1,284 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FeudalWorld — Средневековый Minecraft сервер</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-
-font-family:Montserrat,sans-serif;
-background:#0d0d0d;
-color:white;
-
-background-image:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.82)),
-url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1920");
-
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-
-}
-
-header{
-
-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-
-}
-
-header h1{
-
-font-size:80px;
-font-family:Cinzel,serif;
-
-color:#ffd54f;
-
-text-shadow:
-0 0 20px gold,
-0 0 50px black;
-
-margin-bottom:20px;
-
-}
-
-header p{
-
-font-size:23px;
-
-color:#ddd;
-
-margin-bottom:40px;
-
-}
-
-.play{
-
-padding:18px 45px;
-
-background:#c99700;
-
-border-radius:10px;
-
-font-size:24px;
-
-font-weight:bold;
-
-text-decoration:none;
-
-color:black;
-
-transition:.3s;
-
-}
-
-.play:hover{
-
-transform:scale(1.05);
-
-background:#ffd54f;
-
-}
-
-section{
-
-padding:90px 10%;
-
-}
-
-.title{
-
-font-size:45px;
-
-text-align:center;
-
-margin-bottom:50px;
-
-font-family:Cinzel;
-
-color:#ffd54f;
-
-}
-
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-
-gap:30px;
-
-}
-
-.card{
-
-background:rgba(255,255,255,.06);
-
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.15);
-
-padding:35px;
-
-border-radius:15px;
-
-transition:.3s;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-border-color:gold;
-
-}
-
-.card h2{
-
-margin-bottom:20px;
-
-color:#ffd54f;
-
-}
-
-.ip{
-
-text-align:center;
-
-font-size:40px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-padding:25px;
-
-border:2px solid gold;
-
-border-radius:15px;
-
-margin-top:40px;
-
-transition:.3s;
-
-}
-
-.ip:hover{
-
-background:gold;
-
-color:black;
-
-}
-
-.gallery{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-gap:25px;
-
-}
-
-.gallery img{
-
-width:100%;
-
-border-radius:15px;
-
-transition:.4s;
-
-}
-
-.gallery img:hover{
-
-transform:scale(1.04);
-
-}
-
-footer{
-
-padding:40px;
-
-text-align:center;
-
-background:#111;
-
-}
-
-button{
-
-cursor:pointer;
-
-}
-
-@media(max-width:700px){
-
-header h1{
-
-font-size:50px;
-
-}
-
-.title{
-
-font-size:35px;
-
-}
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeudalWorld — Средневековый Minecraft сервер</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Montserrat, sans-serif;
+            background: #0d0d0d;
+            color: white;
+            background-image: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.82)), url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1920");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 80px;
+            font-family: Cinzel, serif;
+            color: #ffd54f;
+            text-shadow: 0 0 20px gold, 0 0 50px black;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 23px;
+            color: #ddd;
+            margin-bottom: 40px;
+        }
+
+        .play {
+            padding: 18px 45px;
+            background: #c99700;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            transition: .3s;
+        }
+
+        .play:hover {
+            transform: scale(1.05);
+            background: #ffd54f;
+        }
+
+        section {
+            padding: 90px 10%;
+        }
+
+        .title {
+            font-size: 45px;
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: Cinzel;
+            color: #ffd54f;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,.15);
+            padding: 35px;
+            border-radius: 15px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: gold;
+        }
+
+        .card h2 {
+            margin-bottom: 20px;
+            color: #ffd54f;
+        }
+
+        .ip {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 25px;
+            border: 2px solid gold;
+            border-radius: 15px;
+            margin-top: 40px;
+            transition: .3s;
+        }
+
+        .ip:hover {
+            background: gold;
+            color: black;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 15px;
+            transition: .4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.04);
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            background: #111;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        @media(max-width:700px) {
+            header h1 {
+                font-size: 50px;
+            }
+            .title {
+                font-size: 35px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-
-<h1>⚔ FeudalWorld ⚔</h1>
-
-<p>Средневековый сервер Minecraft с честными войнами кланов.</p>
-
-<a href="#join" class="play">НАЧАТЬ ИГРАТЬ</a>
-
-</header>
-
-<section>
-
-<h2 class="title">Почему именно FeudalWorld?</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h2>⚔ Клановые войны</h2>
-
-<p>Создавайте королевства, стройте замки, заключайте союзы и ведите масштабные войны.</p>
-
-</div>
-
-<div class="card">
-
-<h2>👑 Без Pay To Win</h2>
-
-<p>Донат дает только косметику и удобства. Побеждает только скилл.</p>
-
-</div>
-
-<div class="card">
-
-<h2>🏰 Средневековая атмосфера</h2>
-
-<p>Настоящие королевства, рыцари, осады и дипломатия.</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="join">
-
-<h2 class="title">IP сервера</h2>
-
-<div class="ip" onclick="copyIP()">
-
-feudalworld.join-here.xyz
-
-</div>
-
-<p style="text-align:center;margin-top:20px;color:#bbb;">
-Нажмите на IP чтобы скопировать его.
-</p>
-
-```html
-<section>
-
-<h2 class="title">👑 Донат</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h2>🛡 Рыцарь</h2>
-
-<p>• Префикс в чате</p>
-<p>• Цветные сообщения</p>
-<p>• +1 дом</p>
-
-<h1 style="margin-top:20px;color:#ffd54f;">49 ₽</h1>
-
-</div>
-
-<div class="card">
-
-<h2>🏰 Барон</h2>
-
-<p>• Всё из Рыцаря</p>
-<p>• Уникальный префикс</p>
-<p>• Больше участников клана</p>
-
-<h1 style="margin-top:20px;color:#ffd54f;">149 ₽</h1>
-
-</div>
-
-<div class="card">
-
-<h2>👑 Лорд</h2>
-
-<p>• Всё из предыдущих рангов</p>
-<p>• Полёт в привате</p>
-<p>• Приоритетный вход</p>
-
-<h1 style="margin-top:20px;color:#ffd54f;">299 ₽</h1>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">📸 Скриншоты</h2>
-
-<div class="gallery">
-
-<img src="https://picsum.photos/600/400?random=1">
-
-<img src="https://picsum.photos/600/400?random=2">
-
-<img src="https://picsum.photos/600/400?random=3">
-
-<img src="https://picsum.photos/600/400?random=4">
-
-<img src="https://picsum.photos/600/400?random=5">
-
-<img src="https://picsum.photos/600/400?random=6">
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">📜 Правила</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h2>Запрещено</h2>
-
-<p>❌ Читы</p>
-
-<p>❌ Дюпы</p>
-
-<p>❌ Оскорбления администрации</p>
-
-<p>❌ Багоюз</p>
-
-</div>
-
-<div class="card">
-
-<h2>Разрешено</h2>
-
-<p>✅ Войны кланов</p>
-
-<p>✅ Торговля</p>
-
-<p>✅ Дипломатия</p>
-
-<p>✅ Захват территорий</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">👑 Администрация</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h2>Основатель</h2>
-
-<p>Thomas Shelby</p>
-
-</div>
-
-<div class="card">
-
-<h2>Discord</h2>
-
-<p>Скоро</p>
-
-</div>
-
-<div class="card">
-
-<h2>Telegram</h2>
-
-<p>https://t.me/</p>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<h2>FeudalWorld © 2026</h2>
-
-<p style="margin-top:15px;color:#888;">
-Сервер не связан с Mojang Studios.
-</p>
-
-</footer>
-
-<script>
-
-function copyIP(){
-
-navigator.clipboard.writeText("feudalworld.join-here.xyz");
-
-alert("IP сервера скопирован!");
-
-}
-
-</script>
-
+    <header>
+        <h1>⚔ FeudalWorld ⚔</h1>
+        <p>Средневековый сервер Minecraft с честными войнами кланов.</p>
+        <a href="#join" class="play">НАЧАТЬ ИГРАТЬ</a>
+    </header>
+
+    <section>
+        <h2 class="title">Почему именно FeudalWorld?</h2>
+        <div class="cards">
+            <div class="card">
+                <h2>⚔ Клановые войны</h2>
+                <p>Создавайте королевства, стройте замки, заключайте союзы и ведите масштабные войны.</p>
+            </div>
+            <div class="card">
+                <h2>👑 Без Pay To Win</h2>
+                <p>Донат дает только косметику и удобства. Побеждает только скилл.</p>
+            </div>
+            <div class="card">
+                <h2>🏰 Средневековая атмосфера</h2>
+                <p>Настоящие королевства, рыцари, осады и дипломатия.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="join">
+        <h2 class="title">IP сервера</h2>
+        <div class="ip" onclick="copyIP()">
+            feudalworld.join-here.xyz
+        </div>
+        <p style="text-align:center; margin-top:20px; color:#bbb;">
+            Нажмите на IP, чтобы скопировать его.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="title">👑 Донат</h2>
+        <div class="cards">
+            <div class="card">
+                <h2>🛡 Рыцарь</h2>
+                <p>• Префикс в чате</p>
+                <p>• Цветные сообщения</p>
+                <p>• +1 дом</p>
+                <h1 style="margin-top:20px; color:#ffd54f;">49 ₽</h1>
+            </div>
+            <div class="card">
+                <h2>🏰 Барон</h2>
+                <p>• Всё из Рыцаря</p>
+                <p>• Уникальный префикс</p>
+                <p>• Больше участников клана</p>
+                <h1 style="margin-top:20px; color:#ffd54f;">149 ₽</h1>
+            </div>
+            <div class="card">
+                <h2>👑 Лорд</h2>
+                <p>• Всё из предыдущих рангов</p>
+                <p>• Полёт в привате</p>
+                <p>• Приоритетный вход</p>
+                <h1 style="margin-top:20px; color:#ffd54f;">299 ₽</h1>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="title">📸 Скриншоты</h2>
+        <div class="gallery">
+            <img src="https://picsum.photos/600/400?random=1" alt="Скриншот сервера 1">
+            <img src="https://picsum.photos/600/400?random=2" alt="Скриншот сервера 2">
+            <img src="https://picsum.photos/600/400?random=3" alt="Скриншот сервера 3">
+            <img src="https://picsum.photos/600/400?random=4" alt="Скриншот сервера 4">
+            <img src="https://picsum.photos/600/400?random=5" alt="Скриншот сервера 5">
+            <img src="https://picsum.photos/600/400?random=6" alt="Скриншот сервера 6">
+        </div>
+    </section>
+
+    <section>
+        <h2 class="title">📜 Правила</h2>
+        <div class="cards">
+            <div class="card">
+                <h2>Запрещено</h2>
+                <p>❌ Читы</p>
+                <p>❌ Дюпы</p>
+                <p>❌ Оскорбления администрации</p>
+                <p>❌ Багоюз</p>
+            </div>
+            <div class="card">
+                <h2>Разрешено</h2>
+                <p>✅ Войны кланов</p>
+                <p>✅ Торговля</p>
+                <p>✅ Дипломатия</p>
+                <p>✅ Захват территорий</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="title">👑 Администрация</h2>
+        <div class="cards">
+            <div class="card">
+                <h2>Основатель</h2>
+                <p>Thomas Shelby</p>
+            </div>
+            <div class="card">
+                <h2>Discord</h2>
+                <p>Скоро</p>
+            </div>
+            <div class="card">
+                <h2>Telegram</h2>
+                <p><a href="https://t.me/" style="color:#ffd54f; text-decoration:none;">Перейти в канал</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>FeudalWorld © 2026</h2>
+        <p style="margin-top:15px; color:#888;">
+            Сервер не связан с Mojang Studios.
+        </p>
+    </footer>
+
+    <script>
+        function copyIP() {
+            navigator.clipboard.writeText("feudalworld.join-here.xyz");
+            alert("IP сервера скопирован!");
+        }
+    </script>
 </body>
-
 </html>
-```
