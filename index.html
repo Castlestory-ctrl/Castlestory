@@ -23,19 +23,6 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            overflow-x: hidden;
-        }
-
-        /* Анимации появления при прокрутке */
-        .animate-fade {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .animate-fade.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         header {
@@ -45,11 +32,12 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
-            animation: fadeInHeader 1.2s ease-out forwards;
+            /* Плавное проявление шапки при открытии сайта */
+            animation: fadeInHeader 1s ease-out forwards;
         }
 
         @keyframes fadeInHeader {
-            from { opacity: 0; transform: translateY(-20px); }
+            from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -108,13 +96,12 @@
             border: 1px solid rgba(255,255,255,.15);
             padding: 35px;
             border-radius: 15px;
-            transition: transform .3s, border-color .3s, box-shadow .3s;
+            transition: transform .3s, border-color .3s;
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             border-color: gold;
-            box-shadow: 0 10px 25px rgba(255, 213, 79, 0.1);
         }
 
         .card h2 {
@@ -132,8 +119,6 @@
             border-radius: 15px;
             margin-top: 40px;
             transition: .3s;
-            position: relative;
-            overflow: hidden;
         }
 
         .ip:hover {
@@ -146,20 +131,20 @@
             display: inline-block;
             background: #c99700;
             color: black;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            transition: 0.3s;
+            transition: .3s;
+            margin-top: 10px;
         }
 
         .tg-btn:hover {
             background: #ffd54f;
             transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 213, 79, 0.3);
         }
 
-        /* Всплывающее уведомление о копировании */
+        /* Всплывающее всплывающее окно при копировании */
         .toast {
             position: fixed;
             bottom: -100px;
@@ -171,7 +156,7 @@
             font-weight: bold;
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-            transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: bottom 0.4s ease;
             z-index: 1000;
         }
 
@@ -186,16 +171,9 @@
         }
 
         @media(max-width:700px) {
-            header h1 {
-                font-size: 50px;
-            }
-            .title {
-                font-size: 35px;
-            }
-            .ip {
-                font-size: 24px;
-                padding: 15px;
-            }
+            header h1 { font-size: 50px; }
+            .title { font-size: 35px; }
+            .ip { font-size: 24px; padding: 15px; }
         }
     </style>
 </head>
@@ -207,7 +185,7 @@
         <a href="#join" class="play">НАЧАТЬ ИГРАТЬ</a>
     </header>
 
-    <section class="animate-fade">
+    <section>
         <h2 class="title">Почему именно FeudalWorld?</h2>
         <div class="cards">
             <div class="card">
@@ -225,7 +203,7 @@
         </div>
     </section>
 
-    <section id="join" class="animate-fade">
+    <section id="join">
         <h2 class="title">IP сервера</h2>
         <div class="ip" onclick="copyIP()">
             feudalworld.join-here.xyz
@@ -235,7 +213,7 @@
         </p>
     </section>
 
-    <section class="animate-fade">
+    <section>
         <h2 class="title">👑 Донат</h2>
         <div class="cards">
             <div class="card">
@@ -262,7 +240,7 @@
         </div>
     </section>
 
-    <section class="animate-fade">
+    <section>
         <h2 class="title">📜 Правила</h2>
         <div class="cards">
             <div class="card">
@@ -282,7 +260,7 @@
         </div>
     </section>
 
-    <section class="animate-fade">
+    <section>
         <h2 class="title">👑 Администрация</h2>
         <div class="cards">
             <div class="card">
@@ -295,8 +273,8 @@
             </div>
             <div class="card">
                 <h2>Telegram</h2>
-                <p style="margin-bottom: 15px; color: #bbb;">Наш официальный канал</p>
-                <p><a href="https://t.me" target="_blank" class="tg-btn">Перейти в канал</a></p>
+                <p style="color: #bbb; margin-bottom: 5px;">Наш официальный канал</p>
+                <a href="https://t.me" target="_blank" class="tg-btn">Перейти в канал</a>
             </div>
         </div>
     </section>
@@ -308,11 +286,9 @@
         </p>
     </footer>
 
-    <!-- Уведомление о копировании -->
     <div id="toast" class="toast">📋 IP сервера успешно скопирован!</div>
 
     <script>
-        // Копирование IP
         function copyIP() {
             navigator.clipboard.writeText("feudalworld.join-here.xyz");
             
@@ -323,18 +299,6 @@
                 toast.classList.remove("show");
             }, 2500);
         }
-
-        // Анимация блоков при скролле
-        const animatedBlocks = document.querySelectorAll('.animate-fade');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);}});}, observerOptions);animatedBlocks.forEach(block => {observer.observe(block);});
+    </script>
+</body>
+</html>
